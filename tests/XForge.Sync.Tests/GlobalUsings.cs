@@ -1,0 +1,12 @@
+global using FluentAssertions;
+global using Moq;
+global using Xunit;
+global using XForge.Sync;
+global using XForge.Sync.Conflict;
+global using XForge.Sync.Connectivity;
+global using XForge.Sync.Engine;
+global using XForge.Sync.Extensions;
+global using XForge.Sync.Policy;
+global using XForge.Sync.Queue;
+global using XForge.Sync.Tracking;
+global using XForge.Sync.Transport;

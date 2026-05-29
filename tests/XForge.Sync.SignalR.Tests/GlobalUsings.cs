@@ -1,0 +1,10 @@
+global using FluentAssertions;
+global using Microsoft.AspNetCore.Http.Connections;
+global using Microsoft.AspNetCore.SignalR.Client;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.Logging;
+global using Microsoft.Extensions.Options;
+global using Moq;
+global using XForge.Sync;
+global using XForge.Sync.Transport;
+global using Xunit;

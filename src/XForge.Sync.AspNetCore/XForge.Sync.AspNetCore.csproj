@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <RootNamespace>XForge.Sync.AspNetCore</RootNamespace>
+    <AssemblyName>XForge.Sync.AspNetCore</AssemblyName>
+    <Description>ASP.NET Core server-side sync endpoint for XForge.Sync offline-first sync engine. Provides minimal API endpoints for push/pull operations.</Description>
+    <PackageTags>xforge;sync;aspnetcore;offline-first;minimal-api;server</PackageTags>
+    <IsPackable>true</IsPackable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\XForge.Sync\XForge.Sync.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Options" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+  </ItemGroup>
+
+  <!-- Expose internals for testing -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="XForge.Sync.AspNetCore.Tests" />
+  </ItemGroup>
+
+</Project>

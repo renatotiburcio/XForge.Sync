@@ -1,0 +1,19 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/XForge.Sync/XForge.Sync.csproj" />
+    <Project Path="src/XForge.Sync.AspNetCore/XForge.Sync.AspNetCore.csproj" />
+    <Project Path="src/XForge.Sync.Http/XForge.Sync.Http.csproj" />
+    <Project Path="src/XForge.Sync.IndexedDB/XForge.Sync.IndexedDB.csproj" />
+    <Project Path="src/XForge.Sync.SignalR/XForge.Sync.SignalR.csproj" />
+    <Project Path="src/XForge.Sync.Sqlite/XForge.Sync.Sqlite.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/XForge.Sync.Tests/XForge.Sync.Tests.csproj" />
+    <Project Path="tests/XForge.Sync.AspNetCore.Tests/XForge.Sync.AspNetCore.Tests.csproj" />
+    <Project Path="tests/XForge.Sync.Http.Tests/XForge.Sync.Http.Tests.csproj" />
+    <Project Path="tests/XForge.Sync.IndexedDB.Tests/XForge.Sync.IndexedDB.Tests.csproj" />
+    <Project Path="tests/XForge.Sync.SignalR.Tests/XForge.Sync.SignalR.Tests.csproj" />
+    <Project Path="tests/XForge.Sync.Sqlite.Tests/XForge.Sync.Sqlite.Tests.csproj" />
+    <Project Path="tests/XForge.Sync.IntegrationTests/XForge.Sync.IntegrationTests.csproj" />
+  </Folder>
+</Solution>

@@ -8,7 +8,6 @@ public sealed class SignalRSyncTransport : ISyncTransport, IAsyncDisposable
 {
     private readonly SignalRSyncTransportOptions _options;
     private readonly ILogger<SignalRSyncTransport> _logger;
-    private readonly JsonSerializerOptions _jsonOptions;
     private readonly SemaphoreSlim _connectionLock = new(1, 1);
     private HubConnection? _hubConnection;
     private bool _disposed;
@@ -39,13 +38,6 @@ public sealed class SignalRSyncTransport : ISyncTransport, IAsyncDisposable
     {
         _options = (options ?? throw new ArgumentNullException(nameof(options))).Value;
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-
-        _jsonOptions = new JsonSerializerOptions
-        {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-            WriteIndented = false
-        };
     }
 
     /// <inheritdoc />

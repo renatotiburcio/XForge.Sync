@@ -1,40 +1,35 @@
 ﻿# XForge.Sync
 
-Offline-first sync engine: ChangeTracker, ConflictResolver with SQLite, HTTP, SignalR transports.
+Offline-first sync engine for .NET: ChangeTracker, ConflictResolver with SQLite, HTTP, SignalR, and IndexedDB transports.
+
+[![NuGet Version](https://img.shields.io/nuget/v/XForge.Sync.svg?style=flat-square)](https://www.nuget.org/packages/XForge.Sync)
+[![CI](https://img.shields.io/github/actions/workflow/status/renatotiburcio/XForge.Sync/ci.yml?branch=main&style=flat-square&logo=github&label=CI)](https://github.com/renatotiburcio/XForge.Sync/actions/workflows/ci.yml)
+![.NET](https://img.shields.io/badge/.NET-8.0%20%7C%209.0%20%7C%2010.0-512BD4?style=flat-square&logo=dotnet)
+[![MIT License](https://img.shields.io/github/license/renatotiburcio/=flat-square&color=blue)](LICENSE)
+
+---
+
+## Quick Start
+
+```bash
+dotnet add package XForge.Sync
+``` 
+
+See [CHANGELOG.md](CHANGELOG.md) for release history.
 
 ## Packages
 
-- `XForge.Sync`
-- `XForge.Sync.AspNetCore`
-- `XForge.Sync.Http`
-- `XForge.Sync.IndexedDB`
-- `XForge.Sync.SignalR`
-- `XForge.Sync.Sqlite`
+See [NuGet](https://www.nuget.org/packages/XForge.Sync) for all packages.
 
+## Requirements
 
-## Dependencies
-
-- [XForge.Infrastructure](https://github.com/renatotiburcio/XForge.Infrastructure)
-- [XForge.State](https://github.com/renatotiburcio/XForge.State)
-
-## Getting Started
-
-```powershell
-dotnet add package XForge.Sync
-```
-
-## Build
-
-```powershell
-dotnet build --configuration Release
-```
-
-## Test
-
-```powershell
-dotnet test --configuration Release
-```
+| Requirement | Version |
+|---|---|
+| .NET SDK | 8.0+ |
+| C# | 12+ |
+| IDE | VS 2022 17.8+, Rider 2023.3+, VS Code |
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) - Copyright (c) XForge
+

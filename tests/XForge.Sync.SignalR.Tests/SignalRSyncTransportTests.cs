@@ -249,7 +249,10 @@ public sealed class SignalRSyncTransportTests
             CreateLogger().Object);
 
         // Act
-        Func<string?, Task> handler = _ => Task.CompletedTask;
+        static Task handler(string? _)
+        {
+            return Task.CompletedTask;
+        }
         sut.Reconnected += handler;
 
         // Assert — no exception, event is subscribable
@@ -265,7 +268,10 @@ public sealed class SignalRSyncTransportTests
             CreateLogger().Object);
 
         // Act
-        Func<Exception?, Task> handler = _ => Task.CompletedTask;
+        static Task handler(Exception? _)
+        {
+            return Task.CompletedTask;
+        }
         sut.Reconnecting += handler;
 
         // Assert — no exception, event is subscribable

@@ -4,10 +4,12 @@ namespace XForge.Sync.SignalR;
 /// SignalR implementation of <see cref="ISyncTransport"/> that sends sync requests
 /// to a remote server via a real-time SignalR hub connection.
 /// </summary>
-public sealed class SignalRSyncTransport : ISyncTransport, IAsyncDisposable
+public sealed class SignalRSyncTransport(
+    IOptions<SignalRSyncTransportOptions> options,
+    ILogger<SignalRSyncTransport> logger) : ISyncTransport, IAsyncDisposable
 {
-    private readonly SignalRSyncTransportOptions _options;
-    private readonly ILogger<SignalRSyncTransport> _logger;
+    private readonly SignalRSyncTransportOptions _options = (options ?? throw new ArgumentNullException(nameof(options))).Value;
+    private readonly ILogger<SignalRSyncTransport> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     private readonly SemaphoreSlim _connectionLock = new(1, 1);
     private HubConnection? _hubConnection;
     private bool _disposed;
@@ -26,19 +28,6 @@ public sealed class SignalRSyncTransport : ISyncTransport, IAsyncDisposable
     /// Occurs when the hub connection is lost.
     /// </summary>
     public event Func<Exception?, Task>? Reconnecting;
-
-    /// <summary>
-    /// Creates a new <see cref="SignalRSyncTransport"/>.
-    /// </summary>
-    /// <param name="options">The transport configuration options.</param>
-    /// <param name="logger">The logger.</param>
-    public SignalRSyncTransport(
-        IOptions<SignalRSyncTransportOptions> options,
-        ILogger<SignalRSyncTransport> logger)
-    {
-        _options = (options ?? throw new ArgumentNullException(nameof(options))).Value;
-        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-    }
 
     /// <inheritdoc />
     public async Task<SyncResponse> SendAsync(SyncRequest request, CancellationToken ct = default)
